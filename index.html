@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svampletarna</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <main>
+
+            <div id="Inloggning">
+
+                <h1>Logga in</h1>
+
+                <form id="login-form">
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" placeholder="Namn" required>
+
+                    <label for="password">Lösenord</label>
+                    <input type="password" id="password" placeholder="Lösenord" required>
+
+                    <button type="submit">Logga in</button>
+
+                </form>
+
+                <p id="message"></p>
+
+            </div>
+
+            <div id="welcome-sida" class="hidden">
+
+                <h1>Inloggad</h1>
+
+                <p id="welcome-message"></p>
+
+                <button id="logout-button">Logga ut</button>
+
+            </div>
+
+    </main>
+    
+</body>
+</html>
