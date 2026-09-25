@@ -26,6 +26,9 @@ loginForm.addEventListener("submit", function(event) {
         // Visar välkomstmeddelandet
         welcomeMessage.textContent =
         `Välkommen ${inmatatNamn}, du är nu inloggad!`;
+
+        // Sparar användarens namn i localStorage
+        localStorage.setItem("inloggadAnvandare", inmatatNamn);
     
     // Gömmer inloggningen
         inloggning.classList.add("hidden");
@@ -52,6 +55,9 @@ loginForm.addEventListener("submit", function(event) {
 // När användaren trycker på "Logga ut"
 logoutButton.addEventListener("click", function() {
 
+    // Tar bort användaren från localStorage
+    localStorage.removeItem("inloggadAnvandare");
+
     // Gömmer den inloggade sidan
     welcomeSida.classList.add("hidden");
 
@@ -61,3 +67,21 @@ logoutButton.addEventListener("click", function() {
     // Tömmer eventuellt felmeddelande
     message.textContent = "";
 });
+
+// Kollar om det redan finns en sparad användare
+const sparadAnvandare = localStorage.getItem("inloggadAnvandare");
+
+// Om det finns en sparad användare
+// visas den inloggade sidan direkt
+if (sparadAnvandare) {
+
+    // Visar välkomstmeddelandet
+    welcomeMessage.textContent =
+    `Välkommen tillbaka ${sparadAnvandare}, du är nu inloggad!`;
+
+    // Gömmer inloggningen
+    inloggning.classList.add("hidden");
+
+    // Visar den inloggade sidan
+    welcomeSida.classList.remove("hidden");
+}
